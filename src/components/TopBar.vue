@@ -1,9 +1,15 @@
 <template>
   <div :class="['wrapper', classes]">
     <header class="main-header">
-	<span class="logo-mini">
-		<a href="/"><img src="/static/img/copilot-logo-white.svg" alt="Logo" class="img-responsive center-block logo"></a>
-	</span>
+      <a href="javascript:;" class="logo">
+        <span class="logo-mini">
+          Ley
+	      </span>
+        <span class="logo-lg">
+          Ley-CRM
+	      </span>
+      </a>
+
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
@@ -153,7 +159,7 @@
     <!-- Main Footer -->
     <footer class="main-footer">
       <strong>Copyright &copy; {{year}}
-        <a href="javascript:;">CoPilot</a>.</strong> All rights reserved.
+        <a href="javascript:;">LeighCRM</a>.</strong> All rights reserved.
     </footer>
   </div>
   <!-- ./wrapper -->

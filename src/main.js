@@ -15,15 +15,14 @@ import '../node_modules/admin-lte/dist/js/app.min'
 
 Vue.config.productionTip = false
 Vue.use(VueRouter)
-// Import Helpers for filters
+
 import { domain, count, prettyDate, pluralize } from './filters/filters'
 
-// Import Install and register helper items
 Vue.filter('count', count)
 Vue.filter('domain', domain)
 Vue.filter('prettyDate', prettyDate)
 Vue.filter('pluralize', pluralize)
-// Routing logic
+
 var router = new VueRouter({
   routes: routes
 

@@ -153,6 +153,7 @@
       </section>
 
       <router-view></router-view>
+      <control-sidebar></control-sidebar>
     </div>
     <!-- /.content-wrapper -->
 
@@ -161,6 +162,7 @@
       <strong>Copyright &copy; {{year}}
         <a href="javascript:;">LeighCRM</a>.</strong> All rights reserved.
     </footer>
+
   </div>
   <!-- ./wrapper -->
 </template>
@@ -171,10 +173,12 @@
   import config from '.././config/config'
   import Sidebar from './Sidebar'
   import 'hideseek'
+  import ControlSidebar from './ControlSidebar.vue'
 
   export default {
     name: 'TopBar',
     components: {
+      ControlSidebar,
       Sidebar
     },
     data: function () {

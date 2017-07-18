@@ -128,6 +128,9 @@
                 <span class="hidden-xs">{{ demo.displayName }}</span>
               </a>
             </li>
+            <li>
+              <a href="#" data-toggle="control-sidebar" @click="toggleMenu"><i class="fa fa-gears"></i></a>
+            </li>
           </ul>
         </div>
       </nav>
@@ -208,6 +211,9 @@
     methods: {
       changeloading () {
         this.$store.commit('TOGGLE_SEARCHING')
+      },
+      toggleMenu (event) {
+
       }
     }
   }

@@ -24,6 +24,7 @@ Vue.filter('prettyDate', prettyDate)
 Vue.filter('pluralize', pluralize)
 
 var router = new VueRouter({
+  mode: 'history',
   routes: routes
 
 })

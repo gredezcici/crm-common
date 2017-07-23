@@ -9,7 +9,7 @@ import store from './store'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 import '../node_modules/admin-lte/dist/css/AdminLTE.min.css'
-import '../node_modules/admin-lte/dist/css/skins/skin-blue.min.css'
+import '../node_modules/admin-lte/dist/css/skins/skin-black.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.min'
 import '../node_modules/admin-lte/dist/js/app.min'
 

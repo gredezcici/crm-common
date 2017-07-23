@@ -105,7 +105,7 @@
 <style>
   html, body, .container-table {
     height: 100%;
-    background-color: #282B30 !important;
+    background-color: #858585 !important;
   }
   .container-table {
     display: table;

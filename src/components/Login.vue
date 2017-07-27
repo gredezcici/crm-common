@@ -3,9 +3,10 @@
     <div class="row vertical-10p">
       <div class="container">
         <!--<img src="/static/img/logo.png" class="center-block logo">-->
+        <h1 class="center-block">Ley-CRM</h1>
         <div class="text-center col-md-4 col-sm-offset-4">
           <!-- login form -->
-          <form class="ui form loginForm"  @submit.prevent="checkCreds">
+          <form class="ui form loginForm" @submit.prevent="checkCreds">
 
             <div class="input-group">
               <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -107,29 +108,38 @@
     height: 100%;
     background-color: #858585 !important;
   }
+
   .container-table {
     display: table;
     color: white;
   }
+
   .vertical-center-row {
     display: table-cell;
     vertical-align: middle;
   }
+
   .vertical-20p {
     padding-top: 20%;
   }
+
   .vertical-10p {
     padding-top: 10%;
   }
+
   .logo {
     width: 15em;
     padding: 3em;
   }
+
   .loginForm .input-group {
     padding-bottom: 1em;
     height: 4em;
   }
+
   .input-group input {
     height: 4em;
   }
+  h1 {
+    width: 15em;
 </style>

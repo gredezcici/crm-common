@@ -142,4 +142,6 @@
   }
   h1 {
     width: 15em;
+    padding: 3em;
+  }
 </style>

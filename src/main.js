@@ -12,7 +12,11 @@ import '../node_modules/admin-lte/dist/css/AdminLTE.min.css'
 import '../node_modules/admin-lte/dist/css/skins/skin-black.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.min'
 import '../node_modules/admin-lte/dist/js/app.min'
+import 'element-ui/lib/theme-default/index.css'
+import ElementUI from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
 
+Vue.use(ElementUI, {locale})
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 

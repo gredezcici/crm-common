@@ -15,7 +15,9 @@ import '../node_modules/admin-lte/dist/js/app.min'
 import 'element-ui/lib/theme-default/index.css'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
+import vSelect from 'vue-select'
 
+Vue.component('v-select', vSelect)
 Vue.use(ElementUI, {locale})
 Vue.config.productionTip = false
 Vue.use(VueRouter)

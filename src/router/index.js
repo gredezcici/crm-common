@@ -16,7 +16,7 @@ const routes = [
         path: 'queryBuilder',
         alias: '',
         component: QueryBuilder,
-        name: 'QueryBuilder',
+        name: 'My DashBoard',
         meta: {description: 'query page'}
       }
     ]

@@ -16,8 +16,10 @@ import 'element-ui/lib/theme-default/index.css'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import vSelect from 'vue-select'
+import VueQueryBuilder from 'vue-query-builder'
 
 Vue.component('v-select', vSelect)
+Vue.component('vue-query-builder', VueQueryBuilder)
 Vue.use(ElementUI, {locale})
 Vue.config.productionTip = false
 Vue.use(VueRouter)

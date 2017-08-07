@@ -16,6 +16,7 @@
   "dependencies": {
     "admin-lte": "^2.3.11",
     "bootstrap": "^3.3.7",
+    "datatables.net-jqui": "^1.10.15",
     "element-ui": "^1.4.1",
     "faker": "^4.1.0",
     "fontawesome": "^4.7.0",

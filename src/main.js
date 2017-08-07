@@ -6,6 +6,7 @@ import routes from './router'
 import VueRouter from 'vue-router'
 import AppView from './App.vue'
 import store from './store'
+
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import '../node_modules/font-awesome/css/font-awesome.min.css'
 import '../node_modules/admin-lte/dist/css/AdminLTE.min.css'
@@ -15,11 +16,11 @@ import '../node_modules/admin-lte/dist/js/app.min'
 import 'element-ui/lib/theme-default/index.css'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
-import vSelect from 'vue-select'
+
 import VueQueryBuilder from 'vue-query-builder'
 
-Vue.component('v-select', vSelect)
 Vue.component('vue-query-builder', VueQueryBuilder)
+
 Vue.use(ElementUI, {locale})
 Vue.config.productionTip = false
 Vue.use(VueRouter)
@@ -30,6 +31,18 @@ Vue.filter('count', count)
 Vue.filter('domain', domain)
 Vue.filter('prettyDate', prettyDate)
 Vue.filter('pluralize', pluralize)
+
+Vue.directive('cc-dataTable', {
+  bind: function () {
+    console.log('my directives')
+    // var vm = this.vm
+    // var key = this.expression
+    // $(this.el).dataTable({})
+  },
+  update: function (val) {
+    $(this.el).dataTable('setDate', val)
+  }
+})
 
 var router = new VueRouter({
   mode: 'history',

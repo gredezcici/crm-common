@@ -36,7 +36,7 @@
 
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-              <!--<button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>-->
+
             </div>
           </div>
           <!-- /.box-header -->
@@ -72,7 +72,7 @@
           </ul>
           <div class="tab-content">
             <div class="tab-pane active" id="tab_1-1">
-
+              <cc-data-table></cc-data-table>
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_2-2">
@@ -95,10 +95,11 @@
   </section>
 </template>
 <script>
+  import ccDataTable from './DataTable'
 
   export default {
-    name: 'app',
-
+    name: 'queryBuilder',
+    components: {ccDataTable},
     methods: {
       queryUpdated (query) {
         this.query = query

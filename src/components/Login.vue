@@ -2,7 +2,7 @@
   <div class="container container-table">
     <div class="row vertical-10p">
       <div class="container">
-        <!--<img src="/static/img/logo.png" class="center-block logo">-->
+
         <h1 class="center-block">Ley-CRM</h1>
         <div class="text-center col-md-4 col-sm-offset-4">
           <!-- login form -->

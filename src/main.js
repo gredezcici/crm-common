@@ -14,9 +14,10 @@ import '../node_modules/admin-lte/dist/css/skins/skin-black.min.css'
 import '../node_modules/bootstrap/dist/js/bootstrap.min'
 import '../node_modules/admin-lte/dist/js/app.min'
 import 'element-ui/lib/theme-default/index.css'
+import '../node_modules/datatables.net-jqui'
 import '../node_modules/datatables.net/js/jquery.dataTables'
 import '../node_modules/datatables.net-jqui/css/dataTables.jqueryui.css'
-import '../node_modules/datatables.net-jqui'
+
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 

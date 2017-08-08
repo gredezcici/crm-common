@@ -1,5 +1,5 @@
 <template>
-  <table id="queryResult" v-cc-dataTable class="display" cellspacing="0" width="100%">
+  <table id="queryResult" class="display" cellspacing="0" width="100%"  v-cc-dataTable>
     <thead>
     <tr>
       <th>Name</th>
@@ -482,11 +482,14 @@
 </template>
 <script>
   import Vue from 'vue'
+
   Vue.directive('cc-dataTable', {
     bind: function (el, binding, vnode, oldVnode) {
       $(el).DataTable()
+    },
+    update: function (el, binding, vnode, oldVnode) {
+      $(el).DataTable()
     }
-
   })
   export default {
     name: 'ccDataTable'

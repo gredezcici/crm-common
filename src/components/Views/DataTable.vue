@@ -1,5 +1,5 @@
 <template>
-  <table id="queryResult" class="display" cellspacing="0" width="100%"  v-cc-dataTable>
+  <table id="queryResult" class="display" cellspacing="0" width="100%" v-cc-dataTable>
     <thead>
     <tr>
       <th>Name</th>
@@ -489,6 +489,9 @@
     },
     update: function (el, binding, vnode, oldVnode) {
       $(el).DataTable()
+    },
+    unbind: function (el, binding, vnode, oldVnode) {
+
     }
   })
   export default {

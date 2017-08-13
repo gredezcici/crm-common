@@ -40,23 +40,20 @@
     ['Gavin Cortez', 'Team Leader', 'San Francisco', '2860', '2008/10/26', '$235,500'],
     ['Martena Mccray', 'Post-Sales support', 'Edinburgh', '8240', '2011/03/09', '$324,050'],
     ['Unity Butler', 'Marketing Designer', 'San Francisco', '5384', '2009/12/09', '$85,675']]
+  var columns = [
+    {title: 'Name'},
+    {title: 'Position'},
+    {title: 'Office'},
+    {title: 'Extn.'},
+    {title: 'Start date'},
+    {title: 'Salary'}
+  ]
   Vue.directive('cc-dataTable', {
     inserted: function (el, binding, vnode, oldVnode) {
-      try {
-        $(el).DataTable({
-          data: dataSet,
-          columns: [
-            {title: 'Name'},
-            {title: 'Position'},
-            {title: 'Office'},
-            {title: 'Extn.'},
-            {title: 'Start date'},
-            {title: 'Salary'}
-          ]
-        })
-      } catch (e) {
-        console.log(e)
-      }
+      $(el).DataTable({
+        data: dataSet,
+        columns: columns
+      })
     },
     update: function (el, binding, vnode, oldVnode) {
     },

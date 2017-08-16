@@ -1,6 +1,6 @@
 import TopBar from '.././components/TopBar.vue'
 import LoginView from '.././components/Login.vue'
-import QueryBuilder from '.././components/Views/QueryBuilder.vue'
+import QueryForm from '../components/Views/QueryForm.vue'
 
 const routes = [
   {
@@ -15,7 +15,7 @@ const routes = [
       {
         path: 'queryBuilder',
         alias: '',
-        component: QueryBuilder,
+        component: QueryForm,
         name: 'My DashBoard',
         meta: {description: 'query page'}
       }

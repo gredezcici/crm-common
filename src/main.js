@@ -21,9 +21,6 @@ import '../node_modules/datatables.net-jqui/css/dataTables.jqueryui.css'
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 
-import VueQueryBuilder from 'vue-query-builder'
-
-Vue.component('vue-query-builder', VueQueryBuilder)
 Vue.use(ElementUI, {locale})
 Vue.config.productionTip = false
 Vue.use(VueRouter)

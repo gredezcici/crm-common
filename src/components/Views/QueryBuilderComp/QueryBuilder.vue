@@ -42,6 +42,7 @@
     textInputPlaceholder: 'value'
   }
   export default {
+    name: 'ccQueryBuilder',
     components: {
       QueryBuilderGroup
     },

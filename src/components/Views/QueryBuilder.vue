@@ -44,12 +44,12 @@
             <div class="row">
               <div class="col-md-12">
                 <div class="form-group">
-                  <vue-query-builder
+                  <cc-query-builder
                     :labels="labelConf"
                     :rules="rules"
                     :maxDepth="2"
                     @queryUpdated="queryUpdated"
-                  ></vue-query-builder>
+                  ></cc-query-builder>
                 </div>
                 <!-- /.form-group -->
                 <!-- /.col -->
@@ -96,10 +96,10 @@
 </template>
 <script>
   import ccDataTable from './DataTable'
-
+  import ccQueryBuilder from './QueryBuilderComp/QueryBuilder.vue'
   export default {
     name: 'queryBuilder',
-    components: {ccDataTable},
+    components: {ccDataTable, ccQueryBuilder},
     methods: {
       queryUpdated (query) {
         this.query = query

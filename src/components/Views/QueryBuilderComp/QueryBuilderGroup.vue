@@ -50,7 +50,7 @@
 </template>
 
 <script>
-  import QueryBuilderRule from './QueryBuilderRule.vue';
+  import QueryBuilderRule from './QueryBuilderRule.vue'
   export default {
     name: 'query-builder-group',
     components: {
@@ -74,7 +74,7 @@
           query: {
             rule: this.selectedRule.id,
             selectedOperator: this.selectedRule.operators[0],
-            selectedOperand: typeof this.selectedRule.operands === "undefined" ? this.selectedRule.label : this.selectedRule.operands[0],
+            selectedOperand: typeof this.selectedRule.operands === 'undefined' ? this.selectedRule.label : this.selectedRule.operands[0],
             value: null
           }
         })
@@ -91,10 +91,10 @@
         }
       },
       remove () {
-        this.$emit('child-deletion-requested', this.index);
+        this.$emit('child-deletion-requested', this.index)
       },
       removeChild (index) {
-        this.query.children.splice(index, 1);
+        this.query.children.splice(index, 1)
       }
     },
     data () {
@@ -105,9 +105,9 @@
     computed: {
       classObject () {
         var classObject = {
-          'panel panel-default': this.styled,
+          'panel panel-default': this.styled
         }
-        classObject['depth-' + this.depth.toString()] = this.styled;
+        classObject['depth-' + this.depth.toString()] = this.styled
         return classObject
       }
     }

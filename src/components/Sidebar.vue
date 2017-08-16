@@ -37,11 +37,9 @@
       </form>
       <!-- /.search form -->
 
-      <!-- Sidebar Menu -->
       <sidebar-menu/>
-      <!-- /.sidebar-menu -->
     </section>
-    <!-- /.sidebar -->
+
   </aside>
 </template>
 <script>

@@ -10,5 +10,11 @@ export default {
   },
   SET_TOKEN (state, token) {
     state.token = token
+  },
+  SET_QUERY_RESULT (state, data) {
+    state.datatableModel.queryResult = data
+  },
+  SET_COLUMN_NAME (state, columns) {
+    state.datatableModel.columnName = columns
   }
 }

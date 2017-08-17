@@ -13,6 +13,10 @@
       })
     },
     update: function (el, binding, vnode, oldVnode) {
+      var datatable = $(el).dataTable().api()
+      datatable.clear()
+      datatable.rows.add(binding.value)
+      datatable.draw()
     },
     unbind: function (el, binding, vnode, oldVnode) {
     }

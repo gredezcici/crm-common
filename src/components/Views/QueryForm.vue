@@ -133,7 +133,7 @@
         labelConf: {
           addGroup: 'Add Group',
           addRule: 'Add Rule',
-          matchType: 'Match Type1',
+          matchType: 'Match Type',
           matchTypeAll: 'All',
           matchTypeAny: 'Any',
           removeGroup: '&times;',

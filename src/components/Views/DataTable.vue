@@ -1,5 +1,5 @@
 <template>
-  <table id="example" class=" display" width="100%" v-cc-dataTable></table>
+  <table id="example" class=" display" width="100%" v-cc-dataTable="queryResult"></table>
 </template>
 <script>
   import Vue from 'vue'
@@ -8,11 +8,12 @@
   Vue.directive('cc-dataTable', {
     inserted: function (el, binding, vnode, oldVnode) {
       $(el).DataTable({
-        data: store.state.datatableModel.queryResult,
-        columns: store.state.datatableModel.columnName
+        data: binding.value.data,
+        columns: binding.value.columns
       })
     },
     update: function (el, binding, vnode, oldVnode) {
+      console.log('update')
       var datatable = $(el).dataTable().api()
       datatable.clear()
       datatable.rows.add(binding.value)
@@ -22,8 +23,16 @@
     }
   })
   export default {
-    name: 'ccDataTable'
-
+    name: 'ccDataTable',
+    props: ['updateTable'],
+    data () {
+      return {
+        queryResult: {
+          data: store.state.datatableModel.queryResult,
+          columns: store.state.datatableModel.columnName
+        }
+      }
+    }
   }
 </script>
 

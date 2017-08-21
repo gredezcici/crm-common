@@ -48,6 +48,9 @@
                     @queryUpdated="queryUpdated"
                   ></cc-query-builder>
                 </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-block btn-default btn-sm" @click="runQuery">Run Query</button>
+                </div>
                 <!-- /.form-group -->
                 <!-- /.col -->
               </div>
@@ -70,6 +73,7 @@
           <div class="tab-content">
             <div class="tab-pane active" id="tab_1-1">
               <cc-data-table></cc-data-table>
+
             </div>
             <!-- /.tab-pane -->
             <div class="tab-pane" id="tab_2-2">
@@ -100,6 +104,9 @@
     methods: {
       queryUpdated (query) {
         this.query = query
+      },
+      runQuery () {
+        ccDataTable.$forceUpdate()
       }
     },
 

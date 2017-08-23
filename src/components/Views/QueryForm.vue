@@ -5,7 +5,7 @@
 
         <div class="box box-solid">
           <div class="box-header with-border">
-            <h3 class="box-title">Queries</h3>
+            <h3 class="box-title">My Query List</h3>
             <div class="box-tools">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
               </button>
@@ -13,14 +13,31 @@
           </div>
           <div class="box-body no-padding">
             <ul class="nav nav-pills nav-stacked">
-              <li><a href="mailbox.html"><i class="fa fa-inbox"></i> Inbox
-                <span class="label label-primary pull-right">12</span></a></li>
-              <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li>
-              <li><a href="#"><i class="fa fa-file-text-o"></i> Drafts</a></li>
-              <li><a href="#"><i class="fa fa-filter"></i> Junk <span
-                class="label label-warning pull-right">65</span></a>
+              <li><a href="mailbox.html">To do <div class="tools pull-right">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div></a>
+
               </li>
-              <li><a href="#"><i class="fa fa-trash-o"></i> Trash</a></li>
+              <li><a href="#">Sent<div class="tools pull-right">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div></a>
+
+              </li>
+              <li><a href="#">Drafts<div class="tools pull-right">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div></a></li>
+              <li><a href="#">Junk<div class="tools pull-right">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div></a>
+              </li>
+              <li><a href="#">Trash<div class="tools pull-right">
+                <i class="fa fa-edit"></i>
+                <i class="fa fa-trash-o"></i>
+              </div></a></li>
             </ul>
           </div>
           <!-- /.box-body -->
@@ -50,6 +67,9 @@
                 </div>
                 <div class="col-md-3">
                   <button type="button" class="btn btn-block btn-default btn-sm" @click="runQuery">Run Query</button>
+                </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-block btn-default btn-sm" @click="runQuery">Save Query</button>
                 </div>
                 <!-- /.form-group -->
                 <!-- /.col -->
@@ -108,7 +128,6 @@
         this.query = query
       },
       runQuery () {
-        console.log(ccDataTable)
         let result = [
           ['Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011/04/25', '$320,800'],
           ['Garrett Winters', 'Accountant', 'Tokyo', '8422', '2011/07/25', '$170,750'],

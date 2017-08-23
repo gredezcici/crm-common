@@ -29,12 +29,11 @@
         console.log('refreshGrid')
         let dataTable = $('#queryResultGrid').DataTable()
         dataTable.destroy()
-        let latest = {
+        $('#queryResultGrid').empty()
+        $('#queryResultGrid').DataTable({
           data: store.state.datatableModel.queryResult,
           columns: store.state.datatableModel.columnName
-        }
-        dataTable.rows.add(latest)
-        dataTable.draw()
+        })
       }
     },
     created: function () {

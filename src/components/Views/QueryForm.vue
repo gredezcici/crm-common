@@ -139,7 +139,6 @@
 <script>
   import ccDataTable from './DataTable'
   import ccQueryBuilder from './QueryBuilderComp/QueryBuilder.vue'
-  import store from '../.././store'
   import { EventHub } from '../../global/globalVar'
   export default {
     name: 'queryBuilder',
@@ -167,9 +166,12 @@
           {title: 'Start date1'},
           {title: 'Salary1'}
         ]
-        store.commit('SET_QUERY_RESULT', result)
-        store.commit('SET_COLUMN_NAME', columnName)
+        this.$store.commit('SET_QUERY_RESULT', result)
+        this.$store.commit('SET_COLUMN_NAME', columnName)
         EventHub.$emit('refreshQueryGrid')
+      },
+      forTest () {
+        console.log('4test')
       }
     },
 
@@ -208,6 +210,9 @@
           textInputPlaceholder: 'value'
         }
       }
+    },
+    mounted: function () {
+      this.$on('test', this.forTest)
     }
   }
 </script>

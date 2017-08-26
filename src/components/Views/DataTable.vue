@@ -25,7 +25,6 @@
     },
     methods: {
       refreshGrid () {
-        this.$parent.$emit('test')
         let vm = this
         let dataTable = $('#queryResultGrid').DataTable()
         dataTable.destroy()

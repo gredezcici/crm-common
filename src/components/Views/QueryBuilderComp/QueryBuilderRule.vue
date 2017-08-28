@@ -9,7 +9,7 @@
       </select>
 
       <select v-if="! isMultipleChoice" v-model="query.selectedOperator" :class="{ 'form-control': styled }">
-        <option v-for="operator in rule.operators" v-bind:value="operator">
+        <option v-for="operator in rule.operators" :value="operator">
           {{ operator }}
         </option>
       </select>

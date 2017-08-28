@@ -158,12 +158,12 @@
           ['Gavin Cortez', 'Team Leader', 'San Francisco', '2860', '2008/10/26', '$235,500'],
           ['Unity Butler', 'Marketing Designer', 'San Francisco', '5384', '2009/12/09', '$85,675']]
         let columnName = [
-          {title: 'Name1'},
-          {title: 'Position1'},
-          {title: 'Office1'},
-          {title: 'Extn1.'},
-          {title: 'Start date1'},
-          {title: 'Salary1'}
+          {title: 'Name'},
+          {title: 'Position'},
+          {title: 'Office'},
+          {title: 'Extn.'},
+          {title: 'Start date'},
+          {title: 'Salary'}
         ]
         this.$store.commit('SET_QUERY_RESULT', result)
         this.$store.commit('SET_COLUMN_NAME', columnName)

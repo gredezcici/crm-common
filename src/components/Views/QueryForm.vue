@@ -11,14 +11,14 @@
               </button>
             </div>
           </div>
-          <div class="box-body no-padding" :queryList="getMyQueryList(user.id)">
+          <div class="box-body no-padding" >
             <ul  class="nav nav-pills nav-stacked"
-                v-if="typeof queryList != 'undefined'" v-for="query in queryList.rows">
-              <li>{{query.name}}
+                v-if="typeof getMyQueryList(user.id) != 'undefined'" v-for="query in getMyQueryList(user.id).rows">
+              <li><a>{{query.name}}
                 <div class="tools pull-right">
                   <i class="fa fa-edit"></i>
                   <i class="fa fa-trash-o"></i>
-                </div>
+                </div></a>
               </li>
             </ul>
           </div>
@@ -122,41 +122,12 @@
   import ccDataTable from './DataTable'
   import ccQueryBuilder from './QueryBuilderComp/QueryBuilder.vue'
   import { EventHub } from '../../global/globalVar'
-//  import {mixins} from '../../global/glabalFun'
-//  var queryMixins = {
-//    computed: {
-//      getMyQueryList (uid) {
-//        return {
-//          'count': 6,
-//          'rows': [
-//            {'name': 'key customers', 'id': '001'},
-//            {'name': 'potential customers', 'id': '002'},
-//            {'name': 'overseas', 'id': '003'},
-//            {'name': 'local customer', 'id': '004'}
-//          ]
-//
-//        }
-//      }
-//
-//    }
-//  }
   export default {
     name: 'queryBuilder',
     components: {ccDataTable, ccQueryBuilder},
     methods: {
       queryUpdated (query) {
         this.query = query
-      },
-      getMyQueryList (uid) {
-        return {
-          'count': 6,
-          'rows': [
-            {'name': 'key customers', 'id': '001'},
-            {'name': 'potential customers', 'id': '002'},
-            {'name': 'overseas', 'id': '003'},
-            {'name': 'local customer', 'id': '004'}
-          ]
-        }
       },
       runQuery () {
         let result = [
@@ -181,7 +152,6 @@
         EventHub.$emit('refreshQueryGrid')
       }
     },
-//    mixins: [queryMixins],
     data () {
       return {
         queryList: {},

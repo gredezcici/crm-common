@@ -5,16 +5,18 @@ const EventHub = new Vue()
 Vue.mixin({
   methods: {
     getMyQueryList (uid) {
-      return {
-        'count': 6,
+      console.log(uid)
+      let temp = {
+        'count': 4,
         'rows': [
-          {'name': 'key customers', 'id': '001'},
+          {'name': 'key customers_new', 'id': '001'},
           {'name': 'potential customers', 'id': '002'},
           {'name': 'overseas', 'id': '003'},
           {'name': 'local customer', 'id': '004'}
         ]
-
       }
+      this.$store.commit('SET_QUERY_LIST', temp)
+      // return this.$store.state.queryList
     }
   }
 })

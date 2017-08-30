@@ -16,5 +16,8 @@ export default {
   },
   SET_COLUMN_NAME (state, columns) {
     state.datatableModel.columnName = columns
+  },
+  SET_QUERY_LIST (state, queryList) {
+    state.queryList = queryList
   }
 }

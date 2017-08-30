@@ -9,6 +9,15 @@ export default {
     notifications: [],
     tasks: []
   },
+  queryList: {
+    'count': 6,
+    'rows': [
+      {'name': 'key customers', 'id': '001'},
+      {'name': 'potential customers', 'id': '002'},
+      {'name': 'overseas', 'id': '003'},
+      {'name': 'local customer', 'id': '004'}
+    ]
+  },
   datatableModel: {
     queryResult: [
       ['Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011/04/25', '$320,800'],

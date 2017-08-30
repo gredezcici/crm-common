@@ -11,14 +11,15 @@
               </button>
             </div>
           </div>
-          <div class="box-body no-padding" >
-            <ul  class="nav nav-pills nav-stacked"
-                v-if="typeof getMyQueryList(user.id) != 'undefined'" v-for="query in getMyQueryList(user.id).rows">
+          <div class="box-body no-padding">
+            <ul class="nav nav-pills nav-stacked" v-model="queryList"
+                v-if="typeof queryList != 'undefined'" v-for="query in queryList.rows">
               <li><a>{{query.name}}
                 <div class="tools pull-right">
                   <i class="fa fa-edit"></i>
                   <i class="fa fa-trash-o"></i>
-                </div></a>
+                </div>
+              </a>
               </li>
             </ul>
           </div>
@@ -51,8 +52,13 @@
                   <button type="button" class="btn btn-block btn-default btn-sm" @click="runQuery">Run Query</button>
                 </div>
                 <div class="col-md-3">
-                  <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                  <button type="button" class="btn btn-default btn-sm" data-toggle="modal" data-target="#modal-default">
                     Save Query
+                  </button>
+                </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-default btn-sm" @click="getMyQueryList(user.id)">
+                    Update Query List
                   </button>
                 </div>
                 <!-- /.form-group -->
@@ -154,7 +160,7 @@
     },
     data () {
       return {
-        queryList: {},
+        queryList: this.$store.state.queryList,
         user: {
           name: 'admin',
           id: '0001'

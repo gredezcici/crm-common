@@ -57,7 +57,7 @@
                   </button>
                 </div>
                 <div class="col-md-3">
-                  <button type="button" class="btn btn-default btn-sm" @click="getMyQueryList(user.id)">
+                  <button type="button" class="btn btn-default btn-sm" @click="updateQueryList(user.id)">
                     Update Query List
                   </button>
                 </div>
@@ -156,6 +156,10 @@
         this.$store.commit('SET_QUERY_RESULT', result)
         this.$store.commit('SET_COLUMN_NAME', columnName)
         EventHub.$emit('refreshQueryGrid')
+      },
+      updateQueryList (uid) {
+        let latestList = this.getMyQueryList(uid)
+        this.queryList = latestList
       }
     },
     data () {

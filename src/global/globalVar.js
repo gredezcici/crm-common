@@ -16,7 +16,7 @@ Vue.mixin({
         ]
       }
       this.$store.commit('SET_QUERY_LIST', temp)
-      // return this.$store.state.queryList
+      return this.$store.state.queryList
     }
   }
 })

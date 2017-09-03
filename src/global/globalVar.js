@@ -5,7 +5,6 @@ const EventHub = new Vue()
 Vue.mixin({
   methods: {
     getMyQueryList (uid) {
-      console.log(uid)
       let temp = {
         'count': 8,
         'rows': [

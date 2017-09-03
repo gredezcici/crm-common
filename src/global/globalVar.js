@@ -9,11 +9,11 @@ Vue.mixin({
       let temp = {
         'count': 8,
         'rows': [
-          {'name': 'key customers_new', 'id': '001'},
+          {'name': 'key customers', 'id': '001'},
           {'name': 'potential customers', 'id': '002'},
           {'name': 'overseas', 'id': '003'},
           {'name': 'local customer', 'id': '004'},
-          {'name': 'key customers_new', 'id': '005'},
+          {'name': 'key customers_1', 'id': '005'},
           {'name': 'potential customers_1', 'id': '006'},
           {'name': 'overseas_1', 'id': '007'},
           {'name': 'local customer_1', 'id': '008'}

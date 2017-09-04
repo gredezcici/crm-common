@@ -2,12 +2,12 @@
   <ul class="sidebar-menu">
     <li class="header">Main</li>
     <li class="active pageLink" @click="toggleMenu">
-      <router-link to="/"><i class="fa fa-home"></i>
+      <router-link to="/home"><i class="fa fa-home"></i>
         <span class="page">Home</span>
       </router-link>
     </li>
     <li class="pageLink" @click="toggleMenu">
-      <router-link to="/tables"><i class="fa fa-bar-chart"></i>
+      <router-link to="/queryBuilder"><i class="fa fa-bar-chart"></i>
         <span class="page">CRM</span>
       </router-link>
     </li>
@@ -90,7 +90,7 @@
     methods: {
       toggleMenu (event) {
         // remove active from li
-        var active = document.querySelector('li.pageLink.active')
+        let active = document.querySelector('li.pageLink.active')
         if (active) {
           active.classList.remove('active')
         }

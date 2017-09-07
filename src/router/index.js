@@ -2,7 +2,7 @@ import TopBar from '.././components/TopBar.vue'
 import LoginView from '.././components/Login.vue'
 import QueryForm from '../components/Views/QueryForm.vue'
 import Home from '../components/Views/Home.vue'
-
+import UserEditor from '../components/UserEditor.vue'
 const routes = [
   {
     path: '/login',
@@ -17,8 +17,8 @@ const routes = [
         path: 'home',
         alias: '',
         component: Home,
-        name: 'Home Page',
-        meta: {description: 'Home'}
+        name: 'Home',
+        meta: {description: ''}
       },
       {
         path: 'queryBuilder',
@@ -26,6 +26,12 @@ const routes = [
         component: QueryForm,
         name: 'Query',
         meta: {description: 'query page'}
+      }, {
+        path: 'userEditor',
+        alias: '',
+        component: UserEditor,
+        name: 'User',
+        meta: {description: ''}
       }
     ]
   }

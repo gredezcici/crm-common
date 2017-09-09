@@ -1,7 +1,7 @@
 import TopBar from '.././components/TopBar.vue'
 import LoginView from '.././components/Login.vue'
 import QueryForm from '../components/Views/QueryForm.vue'
-import Home from '../components/Views/Home.vue'
+import Home from '../components/Home.vue'
 import UserEditor from '../components/UserEditor.vue'
 const routes = [
   {

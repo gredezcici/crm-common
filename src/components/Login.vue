@@ -45,7 +45,6 @@
     methods: {
       checkCreds () {
         const {username, password} = this
-
         this.toggleLoading()
         this.resetResponse()
         this.$store.commit('TOGGLE_LOADING')
@@ -77,9 +76,9 @@
               this.$store.commit('SET_USER', data.user)
               this.$store.commit('SET_TOKEN', token)
 
-              if (window.localStorage) {
-                window.localStorage.setItem('user', JSON.stringify(data.user))
-                window.localStorage.setItem('token', token)
+              if (window.sessionStorage) {
+                window.sessionStorage.setItem('user', JSON.stringify(data.user))
+                window.sessionStorage.setItem('token', token)
               }
 
               this.$router.push(data.redirect)
@@ -140,6 +139,7 @@
   .input-group input {
     height: 4em;
   }
+
   h1 {
     width: 15em;
     padding: 3em;

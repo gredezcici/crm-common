@@ -64,5 +64,16 @@ export default {
       {title: 'Start date'},
       {title: 'Salary'}
     ]
-  }
+  },
+  sidebarItems: [{
+    name: 'home',
+    path: '/home'
+  }, {
+    name: 'CRM',
+    path: '',
+    children: [{
+      name: 'Query',
+      path: '/queryEditor'
+    }]
+  }]
 }

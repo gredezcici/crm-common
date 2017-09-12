@@ -1,5 +1,5 @@
 <template>
-  <ul class="sidebar-menu">
+  <ul class="sidebar-menu" >
     <li class="header">Main</li>
     <li class="active pageLink" @click="toggleMenu">
       <router-link to="/home"><i class="fa fa-home"></i>

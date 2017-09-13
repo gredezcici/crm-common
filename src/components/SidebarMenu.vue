@@ -1,92 +1,141 @@
 <template>
-  <ul class="sidebar-menu" >
-    <li class="header">Main</li>
-    <li class="active pageLink" @click="toggleMenu">
-      <router-link to="/home"><i class="fa fa-home"></i>
-        <span class="page">Home</span>
-      </router-link>
-    </li>
-    <li class="pageLink" @click="toggleMenu">
-      <router-link to="/queryBuilder"><i class="fa fa-bar-chart"></i>
-        <span class="page">CRM</span>
-      </router-link>
-    </li>
-    <li class="treeview">
-      <a href="#">
-        <i class="fa fa-pie-chart"></i>
-        <span>Statistics</span>
-        <span class="pull-right-container">
-          <i class="fa fa-angle-left fa-fw pull-right"></i>
-        </span>
-      </a>
-      <ul class="treeview-menu">
-        <li>
-          <a href="#">
-            <i class="fa fa-file-word-o"></i> Item 1
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-file-picture-o"></i> Item 2
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fa fa-file-pdf-o"></i> Item 3
-          </a>
-        </li>
-      </ul>
-    </li>
-    <li class="header">Profile</li>
-    <li class="pageLink" @click="toggleMenu">
-      <router-link to="/tasks">
-        <i class="fa fa-tasks"></i>
-        <span class="page">Tasks</span>
-      </router-link>
-    </li>
-    <li class="pageLink" @click="toggleMenu">
-      <router-link to="/setting">
-        <i class="fa fa-cog"></i>
-        <span class="page">Settings</span>
-      </router-link>
-    </li>
+  <div>
+    <ul class="sidebar-menu" v-model="itemList" v-if="typeof itemList ==='object'" v-for="item in itemList">
+      <!--<li class="header">Main</li>-->
+
+      <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu">
+        {{item.name}}
+      </li>
+      <li  v-else-if="typeof item.children === 'object'" class="treeview" @click="toggleMenu">
+        <a href="#">
+          <i :class="item.icon"></i>
+          <span>{{item.name}}</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left fa-fw pull-right"></i>
+          </span>
+        </a>
+          <ul class="treeview-menu" v-for="subItem in item.children">
+            <li>
+
+                <router-link :to='subItem.path'>
+                <i class="fa fa-file-word-o"></i>{{subItem.name}}
+                </router-link>
+
+            </li>
+          </ul>
+
+      </li>
+      <li v-else @click="toggleMenu" class="pageLink">
+        <router-link :to='item.path'><i :class="item.icon"></i>
+          <span class="page">{{item.name}}</span>
+        </router-link>
+      </li>
+      <!--<li class="active pageLink" @click="toggleMenu">-->
+      <!--<router-link to="/home"><i class="fa fa-home"></i>-->
+      <!--<span class="page">Home</span>-->
+      <!--</router-link>-->
+      <!--</li>-->
+      <!--<li class="pageLink" @click="toggleMenu">-->
+      <!--<router-link to="/queryBuilder"><i class="fa fa-bar-chart"></i>-->
+      <!--<span class="page">CRM</span>-->
+      <!--</router-link>-->
+      <!--</li>-->
+      <!--<li class="treeview">-->
+        <!--<a href="#">-->
+          <!--<i class="fa fa-pie-chart"></i>-->
+          <!--<span>Statistics</span>-->
+          <!--<span class="pull-right-container">-->
+           <!--<i class="fa fa-angle-left fa-fw pull-right"></i>-->
+          <!--</span>-->
+        <!--</a>-->
+        <!--<ul class="treeview-menu">-->
+          <!--<li>-->
+            <!--<a href="#">-->
+              <!--<i class="fa fa-file-word-o"></i> Item 1-->
+            <!--</a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a href="#">-->
+              <!--<i class="fa fa-file-picture-o"></i> Item 2-->
+            <!--</a>-->
+          <!--</li>-->
+          <!--<li>-->
+            <!--<a href="#">-->
+              <!--<i class="fa fa-file-pdf-o"></i> Item 3-->
+            <!--</a>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</li>-->
+      <!--<li class="header">Profile</li>-->
+      <!--<li class="pageLink" @click="toggleMenu">-->
+        <!--<router-link to="/tasks">-->
+          <!--<i class="fa fa-tasks"></i>-->
+          <!--<span class="page">Tasks</span>-->
+        <!--</router-link>-->
+      <!--</li>-->
+      <!--<li class="pageLink" @click="toggleMenu">-->
+        <!--<router-link to="/setting">-->
+          <!--<i class="fa fa-cog"></i>-->
+          <!--<span class="page">Settings</span>-->
+        <!--</router-link>-->
+      <!--</li>-->
 
 
-    <!--<li class="header">LOGS</li>-->
-    <!--<li class="pageLink" v-on:click="toggleMenu">-->
-    <!--<router-link to="/access"><i class="fa fa-book"></i>-->
-    <!--<span class="page">Access</span>-->
-    <!--</router-link>-->
-    <!--</li>-->
-    <!--<li class="pageLink" v-on:click="toggleMenu">-->
-    <!--<router-link to="/server"><i class="fa fa-hdd-o"></i>-->
-    <!--<span class="page">Server</span>-->
-    <!--</router-link>-->
-    <!--</li>-->
-    <!--<li class="pageLink" v-on:click="toggleMenu">-->
-    <!--<router-link to="/repos"><i class="fa fa-heart"></i>-->
-    <!--<span class="page">Repos</span>-->
-    <!--<small class="label pull-right bg-green">AJAX</small>-->
-    <!--</router-link>-->
-    <!--</li>-->
+      <!--<li class="header">LOGS</li>-->
+      <!--<li class="pageLink" v-on:click="toggleMenu">-->
+      <!--<router-link to="/access"><i class="fa fa-book"></i>-->
+      <!--<span class="page">Access</span>-->
+      <!--</router-link>-->
+      <!--</li>-->
+      <!--<li class="pageLink" v-on:click="toggleMenu">-->
+      <!--<router-link to="/server"><i class="fa fa-hdd-o"></i>-->
+      <!--<span class="page">Server</span>-->
+      <!--</router-link>-->
+      <!--</li>-->
+      <!--<li class="pageLink" v-on:click="toggleMenu">-->
+      <!--<router-link to="/repos"><i class="fa fa-heart"></i>-->
+      <!--<span class="page">Repos</span>-->
+      <!--<small class="label pull-right bg-green">AJAX</small>-->
+      <!--</router-link>-->
+      <!--</li>-->
 
-    <!--<li class="header">PAGES</li>-->
-    <!--<li class="pageLink" v-on:click="toggleMenu">-->
-    <!--<router-link to="/login">-->
-    <!--<i class="fa fa-circle-o text-yellow"></i>-->
-    <!--<span class="page"> Login</span>-->
-    <!--</router-link>-->
-    <!--</li>-->
-    <!--<li class="pageLink" v-on:click="toggleMenu">-->
-    <!--<router-link to="/404"><i class="fa fa-circle-o text-red"></i>-->
-    <!--<span class="page"> 404</span>-->
-    <!--</router-link>-->
-    <!--</li>-->
-  </ul>
+      <!--<li class="header">PAGES</li>-->
+      <!--<li class="pageLink" v-on:click="toggleMenu">-->
+      <!--<router-link to="/login">-->
+      <!--<i class="fa fa-circle-o text-yellow"></i>-->
+      <!--<span class="page"> Login</span>-->
+      <!--</router-link>-->
+      <!--</li>-->
+      <!--<li class="pageLink" v-on:click="toggleMenu">-->
+      <!--<router-link to="/404"><i class="fa fa-circle-o text-red"></i>-->
+      <!--<span class="page"> 404</span>-->
+      <!--</router-link>-->
+      <!--</li>-->
+    </ul>
+  </div>
 </template>
 <script>
   export default {
     name: 'SidebarName',
+    data () {
+      return {
+        itemList: [{
+          name: 'Main'
+        }, {
+          name: 'Home',
+          path: '/home',
+          icon: 'fa fa-home'
+        }, {
+          name: 'CRM',
+          icon: 'fa fa-bar-chart',
+          path: '',
+          children: [{
+            name: 'Query',
+            path: '/queryBuilder'
+          }]
+        }]
+      }
+    },
     methods: {
       toggleMenu (event) {
         // remove active from li

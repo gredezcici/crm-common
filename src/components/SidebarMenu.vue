@@ -1,12 +1,12 @@
 <template>
   <div>
-    <ul class="sidebar-menu" v-model="itemList" v-if="typeof itemList ==='object'" v-for="item in itemList">
+    <ul class="sidebar-menu" >
       <!--<li class="header">Main</li>-->
 
-      <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu">
+      <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu"  v-model="itemList" v-for="item in itemList">
         {{item.name}}
       </li>
-      <li  v-else-if="typeof item.children === 'object'" class="treeview" @click="toggleMenu">
+      <li v-else-if="typeof item.children === 'object'" class="treeview" @click="toggleMenu">
         <a href="#">
           <i :class="item.icon"></i>
           <span>{{item.name}}</span>
@@ -14,15 +14,13 @@
             <i class="fa fa-angle-left fa-fw pull-right"></i>
           </span>
         </a>
-          <ul class="treeview-menu" v-for="subItem in item.children">
-            <li>
-
-                <router-link :to='subItem.path'>
-                <i class="fa fa-file-word-o"></i>{{subItem.name}}
-                </router-link>
-
-            </li>
-          </ul>
+        <ul class="treeview-menu" >
+          <li v-for="subItem in item.children">
+            <router-link :to='subItem.path'>
+              <i class="fa fa-file-word-o"></i>{{subItem.name}}
+            </router-link>
+          </li>
+        </ul>
 
       </li>
       <li v-else @click="toggleMenu" class="pageLink">
@@ -41,43 +39,43 @@
       <!--</router-link>-->
       <!--</li>-->
       <!--<li class="treeview">-->
-        <!--<a href="#">-->
-          <!--<i class="fa fa-pie-chart"></i>-->
-          <!--<span>Statistics</span>-->
-          <!--<span class="pull-right-container">-->
-           <!--<i class="fa fa-angle-left fa-fw pull-right"></i>-->
-          <!--</span>-->
-        <!--</a>-->
-        <!--<ul class="treeview-menu">-->
-          <!--<li>-->
-            <!--<a href="#">-->
-              <!--<i class="fa fa-file-word-o"></i> Item 1-->
-            <!--</a>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<a href="#">-->
-              <!--<i class="fa fa-file-picture-o"></i> Item 2-->
-            <!--</a>-->
-          <!--</li>-->
-          <!--<li>-->
-            <!--<a href="#">-->
-              <!--<i class="fa fa-file-pdf-o"></i> Item 3-->
-            <!--</a>-->
-          <!--</li>-->
-        <!--</ul>-->
+      <!--<a href="#">-->
+      <!--<i class="fa fa-pie-chart"></i>-->
+      <!--<span>Statistics</span>-->
+      <!--<span class="pull-right-container">-->
+      <!--<i class="fa fa-angle-left fa-fw pull-right"></i>-->
+      <!--</span>-->
+      <!--</a>-->
+      <!--<ul class="treeview-menu">-->
+      <!--<li>-->
+      <!--<a href="#">-->
+      <!--<i class="fa fa-file-word-o"></i> Item 1-->
+      <!--</a>-->
+      <!--</li>-->
+      <!--<li>-->
+      <!--<a href="#">-->
+      <!--<i class="fa fa-file-picture-o"></i> Item 2-->
+      <!--</a>-->
+      <!--</li>-->
+      <!--<li>-->
+      <!--<a href="#">-->
+      <!--<i class="fa fa-file-pdf-o"></i> Item 3-->
+      <!--</a>-->
+      <!--</li>-->
+      <!--</ul>-->
       <!--</li>-->
       <!--<li class="header">Profile</li>-->
       <!--<li class="pageLink" @click="toggleMenu">-->
-        <!--<router-link to="/tasks">-->
-          <!--<i class="fa fa-tasks"></i>-->
-          <!--<span class="page">Tasks</span>-->
-        <!--</router-link>-->
+      <!--<router-link to="/tasks">-->
+      <!--<i class="fa fa-tasks"></i>-->
+      <!--<span class="page">Tasks</span>-->
+      <!--</router-link>-->
       <!--</li>-->
       <!--<li class="pageLink" @click="toggleMenu">-->
-        <!--<router-link to="/setting">-->
-          <!--<i class="fa fa-cog"></i>-->
-          <!--<span class="page">Settings</span>-->
-        <!--</router-link>-->
+      <!--<router-link to="/setting">-->
+      <!--<i class="fa fa-cog"></i>-->
+      <!--<span class="page">Settings</span>-->
+      <!--</router-link>-->
       <!--</li>-->
 
 
@@ -132,6 +130,12 @@
           children: [{
             name: 'Query',
             path: '/queryBuilder'
+          }, {
+            name: 'placeHolder1',
+            path: '/placeHolder'
+          }, {
+            name: 'placeHolder2',
+            path: '/placeHolder'
           }]
         }]
       }

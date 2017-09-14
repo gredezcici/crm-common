@@ -12,9 +12,8 @@
             </div>
           </div>
           <div class="box-body no-padding">
-            <ul class="nav nav-pills nav-stacked" v-model="queryList"
-                v-if="typeof queryList != 'undefined'" v-for="query in queryList.rows">
-              <li><a>{{query.name}}
+            <ul class="nav nav-pills nav-stacked" >
+              <li v-if="typeof queryList != 'undefined'" v-model="queryList" v-for="query in queryList.rows"><a>{{query.name}}
                 <div class="tools pull-right">
                   <i class="fa fa-edit"></i>
                   <i class="fa fa-trash-o"></i>

@@ -1,9 +1,10 @@
 <template>
   <div>
-    <ul class="sidebar-menu" >
+    <ul class="sidebar-menu">
       <!--<li class="header">Main</li>-->
 
-      <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu"  v-model="itemList" v-for="item in itemList">
+      <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu" v-model="itemList"
+          v-for="item in itemList">
         {{item.name}}
       </li>
       <li v-else-if="typeof item.children === 'object'" class="treeview" @click="toggleMenu">
@@ -14,7 +15,7 @@
             <i class="fa fa-angle-left fa-fw pull-right"></i>
           </span>
         </a>
-        <ul class="treeview-menu" >
+        <ul class="treeview-menu">
           <li v-for="subItem in item.children">
             <router-link :to='subItem.path'>
               <i class="fa fa-file-word-o"></i>{{subItem.name}}
@@ -28,56 +29,6 @@
           <span class="page">{{item.name}}</span>
         </router-link>
       </li>
-      <!--<li class="active pageLink" @click="toggleMenu">-->
-      <!--<router-link to="/home"><i class="fa fa-home"></i>-->
-      <!--<span class="page">Home</span>-->
-      <!--</router-link>-->
-      <!--</li>-->
-      <!--<li class="pageLink" @click="toggleMenu">-->
-      <!--<router-link to="/queryBuilder"><i class="fa fa-bar-chart"></i>-->
-      <!--<span class="page">CRM</span>-->
-      <!--</router-link>-->
-      <!--</li>-->
-      <!--<li class="treeview">-->
-      <!--<a href="#">-->
-      <!--<i class="fa fa-pie-chart"></i>-->
-      <!--<span>Statistics</span>-->
-      <!--<span class="pull-right-container">-->
-      <!--<i class="fa fa-angle-left fa-fw pull-right"></i>-->
-      <!--</span>-->
-      <!--</a>-->
-      <!--<ul class="treeview-menu">-->
-      <!--<li>-->
-      <!--<a href="#">-->
-      <!--<i class="fa fa-file-word-o"></i> Item 1-->
-      <!--</a>-->
-      <!--</li>-->
-      <!--<li>-->
-      <!--<a href="#">-->
-      <!--<i class="fa fa-file-picture-o"></i> Item 2-->
-      <!--</a>-->
-      <!--</li>-->
-      <!--<li>-->
-      <!--<a href="#">-->
-      <!--<i class="fa fa-file-pdf-o"></i> Item 3-->
-      <!--</a>-->
-      <!--</li>-->
-      <!--</ul>-->
-      <!--</li>-->
-      <!--<li class="header">Profile</li>-->
-      <!--<li class="pageLink" @click="toggleMenu">-->
-      <!--<router-link to="/tasks">-->
-      <!--<i class="fa fa-tasks"></i>-->
-      <!--<span class="page">Tasks</span>-->
-      <!--</router-link>-->
-      <!--</li>-->
-      <!--<li class="pageLink" @click="toggleMenu">-->
-      <!--<router-link to="/setting">-->
-      <!--<i class="fa fa-cog"></i>-->
-      <!--<span class="page">Settings</span>-->
-      <!--</router-link>-->
-      <!--</li>-->
-
 
       <!--<li class="header">LOGS</li>-->
       <!--<li class="pageLink" v-on:click="toggleMenu">-->
@@ -137,6 +88,18 @@
             name: 'placeHolder2',
             path: '/placeHolder'
           }]
+        }, {
+          name: 'Profile'
+        }, {
+          name: 'Task',
+          path: '/placeHolder',
+          icon: 'fa fa-tasks'
+        }, {
+          name: 'Settings',
+          path: '/placeHolder',
+          icon: 'fa fa-cog'
+        }, {
+          name: 'LOGS'
         }]
       }
     },

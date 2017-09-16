@@ -83,20 +83,20 @@
             path: '/queryBuilder'
           }, {
             name: 'placeHolder1',
-            path: '/placeHolder'
+            path: '/placeHolder1'
           }, {
             name: 'placeHolder2',
-            path: '/placeHolder'
+            path: '/placeHolder2'
           }]
         }, {
           name: 'Profile'
         }, {
           name: 'Task',
-          path: '/placeHolder',
+          path: '/task',
           icon: 'fa fa-tasks'
         }, {
           name: 'Settings',
-          path: '/placeHolder',
+          path: '/settings',
           icon: 'fa fa-cog'
         }, {
           name: 'LOGS'

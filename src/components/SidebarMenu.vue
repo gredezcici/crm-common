@@ -1,7 +1,6 @@
 <template>
   <div>
     <ul class="sidebar-menu">
-      <!--<li class="header">Main</li>-->
 
       <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu" v-model="itemList"
           v-for="item in itemList">

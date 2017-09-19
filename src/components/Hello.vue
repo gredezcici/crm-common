@@ -21,9 +21,6 @@
 </template>
 
 <script>
-  $(document).ready(function () {
-    console.log('jq')
-  })
   export default {
     name: 'hello',
     data () {

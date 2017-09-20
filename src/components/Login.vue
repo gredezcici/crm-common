@@ -19,7 +19,6 @@
             </div>
             <button type="submit" v-bind:class="'btn btn-primary btn-lg ' + loading">Submit</button>
           </form>
-
           <!-- errors -->
           <div v-if=response class="text-red"><p>{{response}}</p></div>
         </div>
@@ -53,7 +52,6 @@
         api.request('post', '/login', {username, password})
           .then(response => {
             this.toggleLoading()
-
             var data = response.data
             /* Checking if error object was returned from the server */
             if (data.error) {

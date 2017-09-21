@@ -154,9 +154,7 @@
             </p>
           </div>
           <!-- /.form-group -->
-
           <h3 class="control-sidebar-heading">Chat Settings</h3>
-
           <div class="form-group">
             <label class="control-sidebar-subheading">
               Show me as online
@@ -164,7 +162,6 @@
             </label>
           </div>
           <!-- /.form-group -->
-
           <div class="form-group">
             <label class="control-sidebar-subheading">
               Turn off notifications
@@ -172,7 +169,6 @@
             </label>
           </div>
           <!-- /.form-group -->
-
           <div class="form-group">
             <label class="control-sidebar-subheading">
               Delete chat history

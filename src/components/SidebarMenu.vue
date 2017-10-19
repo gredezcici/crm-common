@@ -1,8 +1,8 @@
 <template>
   <div>
-    <ul class="sidebar-menu">
+    <ul class="sidebar-menu" >
 
-      <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu" v-model="itemList"
+      <li v-if="item.path == null &&item.children == null " class="header" @click="toggleMenu"
           v-for="item in itemList">
         {{item.name}}
       </li>

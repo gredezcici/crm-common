@@ -54,8 +54,7 @@ export default {
       ['Suki Burks', 'Developer', 'London', '6832', '2009/10/22', '$114,500'],
       ['Prescott Bartlett', 'Technical Author', 'London', '3606', '2011/05/07', '$145,000'],
       ['Gavin Cortez', 'Team Leader', 'San Francisco', '2860', '2008/10/26', '$235,500'],
-      ['Martena Mccray', 'Post-Sales support', 'Edinburgh', '8240', '2011/03/09', '$324,050'],
-      ['Unity Butler', 'Marketing Designer', 'San Francisco', '5384', '2009/12/09', '$85,675']],
+      ['Martena Mccray', 'Post-Sales support', 'Edinburgh', '8240', '2011/03/09', '$324,050']],
     columnName: [
       {title: 'Name'},
       {title: 'Position'},
